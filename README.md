@@ -21,6 +21,6 @@ immediately using his/her given contact detail.
 [Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing).
 
 ## Future Scope
-• Handling of slots in emergency situations
-• Online Consultation
+* Handling of slots in emergency situations
+* Online Consultation
 
