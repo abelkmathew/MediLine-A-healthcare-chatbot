@@ -51,3 +51,14 @@ immediately using his/her given contact detail.
 * Handling of slots in emergency situations
 * Online Consultation
 
+## About Us
+
+Mediline was built as part of our final year project. We are grateful to the Computer Science and Engineering Dept. in Rajagiri School of Engineering and Technology for this opportunity and their continuous support.
+
+### Project Team
+
+* Abel Koshy Mathew
+* Akhil P Saji
+* Alan Varghese Vinu
+* Anoop Thomas John 
+
