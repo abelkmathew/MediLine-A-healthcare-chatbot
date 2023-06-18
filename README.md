@@ -18,7 +18,14 @@ will go to the admin that the user requires emergency services and has to be con
 immediately using his/her given contact detail.
 
 ## Chatbot Prediction Model 
-[Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing).
+[Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing)
+
+## Tools/ Frameworks Used:
+- RASA Framework for chatbot
+- React Website
+- Firebase Database
+- Twilio 
+- Docker 
 
 ## Future Scope
 * Handling of slots in emergency situations
