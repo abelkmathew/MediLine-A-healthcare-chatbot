@@ -1,0 +1,278 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+- user_age
+- greet
+- user_name
+- find_id
+- enter_id
+- emergency
+- nlu_fallback
+- doctor_name
+- revisit
+- user_patient_id
+- symptom_affirm
+- consult
+- first_symptom
+- disease_main_symptom
+- choose_date
+- male
+- choosen_timeslot
+- user_contact
+- symptom_deny
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- appointment
+- patient_id
+- rasa_hello
+- female
+- other
+entities:
+- age
+- contact
+- date
+- doctor
+- gender
+- name
+- patient_id
+- primary_symptom
+- related_symptom
+- sym_check
+- symptom
+- temp
+- temp1
+- temp2
+- temp3
+- temp4
+- time_slot
+- user_database
+- user_exist
+- user_exist1
+slots:
+  name:
+    type: text
+    influence_conversation: true
+  gender:
+    type: text
+    influence_conversation: true
+  primary_symptom:
+    type: text
+    influence_conversation: true
+  related_symptom:
+    type: text
+    influence_conversation: true
+  sym_check:
+    type: text
+    influence_conversation: true
+  temp:
+    type: bool
+    influence_conversation: true
+  symptom:
+    type: text
+    influence_conversation: false
+  doctor:
+    type: text
+    influence_conversation: true
+  date:
+    type: text
+    influence_conversation: true
+  time_slot:
+    type: text
+    influence_conversation: true
+  age:
+    type: float
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  contact:
+    type: float
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  patient_id:
+    type: float
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  temp1:
+    type: bool
+    influence_conversation: true
+  temp2:
+    type: bool
+    influence_conversation: true
+  temp3:
+    type: bool
+    influence_conversation: true
+  temp4:
+    type: bool
+    influence_conversation: true
+  user_exist:
+    type: bool
+    influence_conversation: true
+  user_database:
+    type: bool
+    influence_conversation: true
+responses:
+  utter_start:
+  - text: Welcome to MediLine
+  utter_greet:
+  - text: Great to hear from you.
+  utter_first_name:
+  - text: Can you enter your first name
+  utter_last_name:
+  - text: Can you enter your last name
+  utter_reply:
+  - text: Hi {name}
+  utter_service:
+  - text: What services do you require?
+    buttons:
+    - title: Revisiting
+      payload: /revisit
+    - title: New Consultation
+      payload: /consult
+    - title: Emergency
+      payload: /emergency
+  utter_revisit:
+  - text: Select the method you want?
+    buttons:
+    - title: Enter Your Patient ID
+      payload: /enter_id
+    - title: Forgot Your Patient ID
+      payload: /find_id
+  utter_request_name:
+  - text: I request you to please enter your name
+  utter_goodbye:
+  - text: Bye
+  utter_rephrase:
+  - text: Couldn't understand what you are trying to say could you please rephrase?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_consult:
+  - text: Please input one of your symptom
+  utter_primarySymptom:
+  - text: Please type your symptom
+  utter_related_symptom:
+  - text: Searches related to input
+  utter_symptoms:
+  - text: '{symptom} ?'
+    buttons:
+    - title: Yes
+      payload: /symptom_affirm{{"sym_check":"sym-yes"}}
+    - title: No
+      payload: /symptom_deny{{"sym_check":"sym-no"}}
+  utter_gender:
+  - text: Can you please select your gender.....
+    buttons:
+    - title: male
+      payload: /male{{"gender":"male"}}
+    - title: female
+      payload: /female{{"gender":"female"}}
+  utter_reply_gender:
+  - text: Your gender is {gender}
+  utter_reply_doctor:
+  - text: Selected doctor is {doctor}
+  utter_date:
+  - text: Selected date is {date}
+  utter_timeslot:
+  - text: Selected time slot is {time_slot}
+  utter_request_age:
+  - text: Please Enter your age
+  utter_request_contact:
+  - text: Please Enter your 10 digit contact number
+  utter_request_id:
+  - text: Please enter your 6 digit patient id
+  utter_reply_contact:
+  - text: Your contact number is {contact}
+  utter_reply_age:
+  - text: Your age is {age} Can you select your gender
+  utter_after_service:
+  - text: Enter your age
+  utter_after_revisit:
+  - text: Enter your 6 digit patient code
+  utter_all_slots:
+  - text: 'patient_id : {patient_id}, name : {name}, age : {age}, gender : {gender}, contact : {contact}.'
+  utter_after_appointment:
+  - text: Please arrive 15 minutes before your appointment.
+actions:
+- action_book_appointment
+- action_change_doctor_name
+- action_check_user_database
+- action_check_user_exist_id
+- action_emergency_sms
+- action_fill_user_slots
+- action_get_doctors
+- action_predict_classify
+- action_primary_prediction
+- action_reset_everything
+- action_secondary_prediction
+- action_select_date
+- action_select_timeslots
+- action_set_true
+- action_set_true1
+- action_symptom_checker
+- action_user_exist
+- utter_after_revisit
+- utter_after_service
+- utter_consult
+- utter_date
+- utter_first_name
+- utter_gender
+- utter_greet
+- utter_last_name
+- utter_reply
+- utter_reply_age
+- utter_reply_contact
+- utter_reply_doctor
+- utter_reply_gender
+- utter_request_age
+- utter_request_contact
+- utter_service
+- utter_start
+- utter_symptoms
+- utter_timeslot
+- validate_age_form
+- validate_contact_form
+- validate_first_name_form
+- validate_last_name_form
+- validate_patient_form
+- validate_primary_symptom_form
+forms:
+  first_name_form:
+    required_slots:
+      name:
+      - entity: name
+        type: from_entity
+  last_name_form:
+    required_slots:
+      name:
+      - entity: name
+        type: from_entity
+  primary_symptom_form:
+    required_slots:
+      primary_symptom:
+      - entity: primary_symptom
+        type: from_entity
+  gender_form:
+    required_slots:
+      gender:
+      - entity: gender
+        type: from_entity
+  age_form:
+    required_slots:
+      age:
+      - entity: age
+        type: from_entity
+  contact_form:
+    required_slots:
+      contact:
+      - entity: contact
+        type: from_entity
+  patient_form:
+    required_slots:
+      patient_id:
+      - entity: patient_id
+        type: from_entity

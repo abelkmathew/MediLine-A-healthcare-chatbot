@@ -1,0 +1,560 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi'
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: user_name
+  examples: |
+    - My name is [Akhil P Saji](name)
+    - It is [Abel Koshy Mathew](name)
+    - [Alan Varghese Vinu](name)
+    - Its [Arun Nair](name)
+    - [Tom John](name) is my name
+    - [abel](name)
+    - [Abel](name)
+    - [Tom](name)
+    - [Anoop](name)
+    - [Ajith](name)
+    - [Ajay](name)
+    - [akhil](name)
+    - [Alan](name)
+    - [Agasto](name)
+    - [John](name)
+    - [Kevin](name)
+    - [Kiran](name)
+    - [anoop](name)
+    - [ajith](name)
+    - [Akhil](name)
+    - [Saji](name)
+    - [Rahul](name)
+    - [Hari](name)
+    - [Ram](name)
+    - [Das](name)
+    - [Vasudevan](name)
+    - [Ashwin](name)
+    - [Abhinav](name)
+    - [Shibu](name)
+    - [Anirudh](name)
+    - [Jisha](name)
+    - [G](name)
+    - [Biju](name)
+    - [Abhraham](name)
+    - [Meenu](name)
+    - [Mathew](name)
+    - [Sminu](name)
+    - [Izudheen](name)
+    - [Ebin](name)
+    - [Thankachan](name)
+    - [Marutheri](name)
+    - [Abhishek](name)
+    - [Boney](name)
+    - [Adithya](name)
+    - [Aditya](name)
+    - [Riya](name)
+    - [Shaji](name)
+    - [Anisha](name)
+    - [Anilkumar](name)
+    - [Amritha](name)
+    - [Anil](name)
+    - [Abhirami](name)
+    - [Sinesh](name)
+    - [Aashna](name)
+    - [Saju](name)
+    - [Agna jain](name)
+    - [Sam](name)
+    - [Naya](name)
+    - [Ishaan](name)
+    - [Inaya](name)
+    - [Jay](name)
+    - [Jaya](name)
+    - [Dhruv](name)
+    - [Shyla](name)
+    - [Amar](name)
+    - [Diya](name)
+    - [Denny](name)
+    - [Radhakrishnan](name)
+    - [Ananya](name)
+    - [Tamia](name)
+    - [Nila](name)
+    - [Agastya](name)
+    - [Sana](name)
+    - [Aja](name)
+    - [Adithi](name)
+    - [Ajay](name)
+    - [Anjali](name)
+    - [Shaan](name)
+    - [Sahil](name)
+    - [Ishani](name)
+    - [Amber](name)
+    - [Johnny](name)
+    - [Sitara](name)
+    - [Darsh](name)
+    - [Deven](name)
+    - [Avan](name)
+    - [Mihir](name)
+    - [Candy](name)
+    - [Kavi](name)
+    - [Mahika](name)
+    - [Artha](name)
+    - [Marj](name)
+    - [Farid](name)
+    - [Salina](name)
+    - [Vivan](name)
+    - [Tulsi](name)
+    - [Kimaya](name)
+    - [Varun](name)
+    - [Charu](name)
+    - [Devi](name)
+    - [Sona](name)
+    - [Amitabh](name)
+    - [Aishvarya](name)
+    - [Aishwarya](name)
+    - [Sudhir](name)
+    - [Sudit](name)
+    - [Lata](name)
+    - [Neha](name)
+    - [Dhara](name)
+    - [Akhilesh](name)
+    - [Mayur](name)
+    - [Kala](name)
+    - [Arthi](name)
+    - [Janitra](name)
+    - [Akshay](name)
+    - [Bharat](name)
+    - [Tej](name)
+    - [Chander](name)
+    - [Yanisha](name)
+    - [Shalene](name)
+    - [Shalini](name)
+    - [Manu](name)
+    - [Anand](name)
+    - [Prasad](name)
+    - [Anusha](name)
+    - [Shantai](name)
+    - [Amata](name)
+    - [Drishana](name)
+    - [Hansika](name)
+    - [Praveen](name)
+    - [Angee](name)
+    - [Rajesh](name)
+    - [Kamala](name)
+    - [Anuradha](name)
+    - [Satish](name)
+    - [Jarita](name)
+    - [Neesha](name)
+    - [Nisha](name)
+    - [Indu](name)
+    - [Avinash](name)
+    - [Amrit](name)
+    - [Lakshman](name)
+    - [Banita](name)
+    - [Janak](name)
+    - [Johar](name)
+    - [Karan](name)
+    - [Vanitha](name)
+    - [Prasad](name)
+    - [Hansika](name)
+    - [Dhanya](name)
+    - [PM](name)
+    - [Sajish](name)
+    - [Babumon](name)
+    - [Bryan](name)
+    - [Aleena](name)
+    - [Saira](name)
+    - [Laiju](name)
+    - [Laijhu](name)
+    - [Anstin](name)
+    - [M](name)
+    - [Bose](name)
+    - [Anton](name)
+    - [Roy](name)
+    - [Ardra](name)
+    - [Manoj](name)
+    - [Christina](name)
+    - [Susan](name)
+    - [Biji](name)
+    - [Elizabeth](name)
+    - [Parambil](name)
+    - [Geo](name)
+    - [Paiz](name)
+    - [Mohammad](name)
+    - [Nithin](name)
+    - [Chooralil](name)
+    - [James](name)
+    - [Padayatti](name)
+    - [Ambli](name)
+    - [SR](name)
+    - [Akshara](name)
+    - [Suresh](name)
+    - [Anna](name)
+    - [Mathai](name)
+    - [Joe](name)
+    - [Amal](name)
+    - [Alicia](name)
+    - [Goerge](name)
+    - [Ann](name)
+    - [Mohan](name)
+    - [Chacko](name)
+    - [Anupa](name)
+    - [Arathi](name)
+    - [Jayachandran](name)
+    - [Ami](name)
+    - [Aparna](name)
+    - [Athulya](name)
+    - [Mini](name)
+    - [Jose](name)
+    - [Jerson](name)
+    - [Devassy](name)
+    - [Deepak](name)
+    - [Devika](name)
+    - [Dinesh](name)
+    - [Divya](name)
+    - [Rose](name)
+    - [Cherian](name)
+    - [Amalu](name)
+    - [Merin](name)
+    - [Dhanuja](name)
+    - [Varkey](name)
+    - [Adeept](name)
+    - [Trilok](name)
+    - [Leemon](name)
+    - [Austin](name)
+    - [Gerard](name)
+    - [Murali](name)
+    - [Adam](name)
+    - [Basil](name)
+    - [Haresh](name)
+    - [Aswin](name)
+    - [Tomy](name)
+    - [Joseph](name)
+    - [Allen](name)
+    - [Thadathil](name)
+    - [Martin](name)
+    - [Siby](name)
+    - [Don](name)
+    - [Pyar](name)
+    - [Raj](name)
+    - [Jojo](name)
+    - [Aravind](name)
+    - [Donnel](name)
+    - [Shinto](name)
+    - [Ashim](name)
+- intent: revisit
+  examples: |
+    - Revisist
+    - revisit
+    - REVISIT
+    - Visit again
+    - visit again
+    - Revisiting
+- intent: appointment
+  examples: |
+    - Appointment
+    - appointment
+    - APPOINTMENT
+    - I have an appointment
+    - Have Appointmnt with doctor
+    - Have Appointmnt with Doctor
+- intent: rasa_hello
+  examples: |
+    - hey rasabot
+    - rasabot
+- intent: consult
+  examples: |
+    - consult a doctor
+    - consultation
+    - new Consultation
+    - Meet doctor
+    - I want to consult a doctor
+- intent: emergency
+  examples: |
+    - emergency
+    - Emergency
+- intent: find_id
+  examples: |
+    - find patient id
+    - Find the patient ID
+- intent: enter_id
+  examples: |
+    - enter patient id
+    - Enter the patient ID
+- intent: first_symptom
+  examples: |
+    - I have [pain](primary_symptom)
+    - [back pain](primary_symptom)
+    - [itching](primary_symptom)
+    - [skin rash](primary_symptom)
+    - [chills](primary_symptom)
+    - [acidity](primary_symptom)
+    - [pain](primary_symptom)
+    - [cold](primary_symptom)
+    - [nodal skin eruptions](primary_symptom)
+    - [continuous sneezing](primary_symptom)
+    - [shivering](primary_symptom)
+    - [joint pain](primary_symptom)
+    - [stomach pain](primary_symptom)
+    - [ulcers on tongue](primary_symptom)
+    - [muscle wasting](primary_symptom)
+    - [vomiting](primary_symptom)
+    - [burning micturition](primary_symptom)
+    - [spotting urination](primary_symptom)
+    - [fatigue](primary_symptom)
+    - [weight gain](primary_symptom)
+    - [anxiety](primary_symptom)
+    - [cold hands and feets](primary_symptom)
+    - [mood swings](primary_symptom)
+    - [weight loss](primary_symptom)
+    - [restlessness](primary_symptom)
+    - [lethargy](primary_symptom)
+    - [patches in throat](primary_symptom)
+    - [irregular sugar level](primary_symptom)
+    - [cough](primary_symptom)
+    - [high fever](primary_symptom)
+    - [sunken eyes](primary_symptom)
+    - [breathlessness](primary_symptom)
+    - [sweating](primary_symptom)
+    - [dehydration](primary_symptom)
+    - [indigestion](primary_symptom)
+    - [headache](primary_symptom)
+    - [yellowish skin](primary_symptom)
+    - [dark urine](primary_symptom)
+    - [nausea](primary_symptom)
+    - [loss of appetite](primary_symptom)
+    - [pain behind the eyes](primary_symptom)
+    - [constipation](primary_symptom)
+    - [abdominal pain](primary_symptom)
+    - [diarrhoea](primary_symptom)
+    - [mild fever](primary_symptom)
+    - [yellow urine](primary_symptom)
+    - [yellowing of eyes](primary_symptom)
+    - [acute liver failure](primary_symptom)
+    - [fluid overload](primary_symptom)
+    - [swelling of stomach](primary_symptom)
+    - [swelled lymph nodes](primary_symptom)
+    - [malaise](primary_symptom)
+    - [blurred and distorted vision](primary_symptom)
+    - [phlegm](primary_symptom)
+    - [throat irritation](primary_symptom)
+    - [redness of eyes](primary_symptom)
+    - [sinus pressure](primary_symptom)
+    - [runny nose](primary_symptom)
+    - [congestion](primary_symptom)
+    - [chest pain](primary_symptom)
+    - [weakness in limbs](primary_symptom)
+    - [fast heart rate](primary_symptom)
+    - [pain during bowel movements](primary_symptom)
+    - [pain in anal region](primary_symptom)
+    - [bloody stool](primary_symptom)
+    - [irritation in anus](primary_symptom)
+    - [neck pain](primary_symptom)
+    - [dizziness](primary_symptom)
+    - [cramps](primary_symptom)
+    - [bruising](primary_symptom)
+    - [obesity](primary_symptom)
+    - [swollen legs](primary_symptom)
+    - [swollen blood vessels](primary_symptom)
+    - [puffy face and eyes](primary_symptom)
+    - [enlarged thyroid](primary_symptom)
+    - [brittle nails](primary_symptom)
+    - [swollen extremeties](primary_symptom)
+    - [excessive hunger](primary_symptom)
+    - [extra marital contacts](primary_symptom)
+    - [drying and tingling lips](primary_symptom)
+    - [slurred speech](primary_symptom)
+    - [knee pain](primary_symptom)
+    - [hip joint pain](primary_symptom)
+    - [muscle weakness](primary_symptom)
+    - [stiff neck](primary_symptom)
+    - [swelling joints](primary_symptom)
+    - [movement stiffness](primary_symptom)
+    - [spinning movements](primary_symptom)
+    - [loss of balance](primary_symptom)
+    - [unsteadiness](primary_symptom)
+    - [weakness of one body side](primary_symptom)
+    - [loss of smell](primary_symptom)
+    - [bladder discomfort](primary_symptom)
+    - [foul smell of urine](primary_symptom)
+    - [continuous feel of urine](primary_symptom)
+    - [passage of gases](primary_symptom)
+    - [internal itching](primary_symptom)
+    - [toxic look typhos](primary_symptom)
+    - [depression](primary_symptom)
+    - [irritability](primary_symptom)
+    - [muscle pain](primary_symptom)
+    - [altered sensorium](primary_symptom)
+    - [red spots over body](primary_symptom)
+    - [belly pain](primary_symptom)
+    - [abnormal menstruation](primary_symptom)
+    - [dischromic  patches](primary_symptom)
+    - [watering from eyes](primary_symptom)
+    - [increased appetite](primary_symptom)
+    - [polyuria](primary_symptom)
+    - [family history](primary_symptom)
+    - [mucoid sputum](primary_symptom)
+    - [rusty sputum](primary_symptom)
+    - [lack of concentration](primary_symptom)
+    - [visual disturbances](primary_symptom)
+    - [receiving blood transfusion](primary_symptom)
+    - [receiving unsterile injections](primary_symptom)
+    - [coma](primary_symptom)
+    - [stomach bleeding](primary_symptom)
+    - [distention of abdomen](primary_symptom)
+    - [history of alcohol consumption](primary_symptom)
+    - [fluid overload.1](primary_symptom)
+    - [blood in sputum](primary_symptom)
+    - [prominent veins on calf](primary_symptom)
+    - [palpitations](primary_symptom)
+    - [painful walking](primary_symptom)
+    - [pus filled pimples](primary_symptom)
+    - [blackheads](primary_symptom)
+    - [scurring](primary_symptom)
+    - [skin peeling](primary_symptom)
+    - [silver like dusting](primary_symptom)
+    - [small dents in nails](primary_symptom)
+    - [inflammatory nails](primary_symptom)
+    - [blister](primary_symptom)
+    - [red sore around nose](primary_symptom)
+    - [yellow crust ooze](primary_symptom)
+    - [prognosis](primary_symptom)
+    - [fever](primary_symptom)
+    - [NOse](primary_symptom)
+    - [Vomiting](primary_symptom)
+    - [Fever](primary_symptom)
+    - [Pain](primary_symptom)
+    - [Cold](primary_symptom)
+    - [shiver](primary_symptom)
+- intent: disease_main_symptom
+  examples: |
+    - [stomach_pain](related_symptom)
+    - [back_pain](related_symptom)
+- intent: symptom_affirm
+  examples: |
+    - [sym-yes](sym_check)
+    - [sym-y](sym_check)
+    - [sym-yeah](sym_check)
+    - [sym-ya](sym_check)
+- intent: symptom_deny
+  examples: |
+    - [sym-no](sym_check)
+    - [sym-n](sym_check)
+    - [sym-No](sym_check)
+    - [sym-N](sym_check)
+    - [sym-na](sym_check)
+    - [sym-not at all](sym_check)
+- intent: male
+  examples: |
+    - [Male](gender)
+    - [male](gender)
+    - [MALE](gender)
+- intent: female
+  examples: |
+    - [Female](gender)
+    - [female](gender)
+    - [FEMALE](gender)
+- intent: other
+  examples: |
+    - [Other](gender)
+    - [other](gender)
+    - [OTHER](gender)
+- intent: doctor_name
+  examples: |
+    - [Alex](doctor)
+    - [Thomas](doctor)
+- intent: choose_date
+  examples: |
+    - [2022-04-29](date)
+    - [2022-05-01](date)
+    - [2022-05-07](date)
+- intent: choosen_timeslot
+  examples: |
+    - [09:20 am](time_slot)
+    - [10:00 am](time_slot)
+    - [02:30 pm](time_slot)
+- intent: user_age
+  examples: |
+    - My age is [25](age)
+    - [10](age)
+    - It is [56](age)
+    - [76](age) is my age
+    - [45](age)
+    - [98](age)
+    - [21](age)
+    - [25](age)
+    - [76](age)
+- intent: user_contact
+  examples: |
+    - My contact is [9867564857](contact)
+    - It is [8573245475](contact)
+    - [7869506743](contact) is my contact
+    - [9586745374](contact)
+    - [8465971245](contact)
+    - [8754136954](contact)
+    - [9878967898](contact)
+- intent: user_patient_id
+  examples: |
+    - My id is [100003](patient_id)
+    - My patient id is [100016](patient_id)
+    - It is [384756](patient_id)
+    - [273645](patient_id) is my id
+    - [100234](patient_id) is my patient id
+    - [100293](patient_id)
+    - [263746](patient_id)
+    - [102836](patient_id)
+    - [192736](patient_id)
+- regex: age
+  examples: |
+    - \d{1,20}
+- regex: contact
+  examples: |
+    - \d{1,20}
+- regex: patient_id
+  examples: |
+    - \d{1,20}

@@ -1,0 +1,6 @@
+sklearn
+pandas==1.4.1
+numpy==1.22.3
+firebase-admin
+datetime
+twilio

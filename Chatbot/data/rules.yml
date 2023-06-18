@@ -1,0 +1,391 @@
+version: "2.0"
+
+rules:
+- rule: Rasa welcome user
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  wait_for_user_input: false
+  
+- rule: Rasa user
+  conversation_start: true
+  steps:
+  - intent: rasa_hello
+  - action: utter_start
+  - action: action_reset_everything
+  wait_for_user_input: false
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# - rule: For nlu_fallback
+#   steps:
+#   - intent: nlu_fallback
+#   - action: utter_rephrase
+  
+- rule: Select_Find_Option
+  steps:
+  - action: utter_revisit
+  - intent: find_id
+  - action: action_set_true1
+  wait_for_user_input: false
+
+- rule: Select_Enter_Option
+  steps:
+  - intent: revisit
+  - action: utter_revisit
+  wait_for_user_input: false
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  
+- rule: Activate patient_form
+  steps:
+  - intent: enter_id
+  - action: utter_after_revisit
+  - action: patient_form
+  - active_loop: patient_form
+  
+- rule: Submit patient_form
+  condition:
+  - active_loop: patient_form
+  steps:
+  - action: patient_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_check_user_database
+  wait_for_user_input: false
+  
+- rule: User Dont Exist in Database
+  condition:
+  - slot_was_set:
+    - user_database: false
+  steps:
+  - action: utter_service
+  
+- rule: User Exist in Database
+  condition:
+  - slot_was_set:
+    - user_database: true
+  steps:
+  - action: action_fill_user_slots
+  - action: utter_all_slots
+  - action: utter_consult
+  - action: primary_symptom_form
+  - active_loop: primary_symptom_form
+  
+- rule: User Exist in Database
+  condition:
+  - slot_was_set:
+    - user_database: true
+  steps:
+  - action: utter_timeslot
+  - action: action_book_appointment
+  - action: utter_after_appointment
+  
+- rule: Activate first_name_form
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+ 
+- rule: Submit first_name_form
+  condition:
+  - active_loop: first_name_form
+  steps:
+  - action: first_name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  
+- rule: Submit last_name_form
+  condition:
+  - active_loop: last_name_form
+  steps:
+  - action: last_name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_reply
+  - action: utter_service
+ 
+- rule: Interrupt_patient_form_deny
+  condition:
+  - active_loop: patient_form
+  steps:
+  - intent: deny
+  - action: utter_request_id
+  - action: patient_form
+  - active_loop: patient_form
+ 
+- rule: Interrupt_patient_form_botchallenge
+  condition:
+  - active_loop: patient_form
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: utter_request_id
+  - action: patient_form
+  - active_loop: patient_form
+ 
+- rule: Interrupt_first_name_form_deny
+  condition:
+  - active_loop: first_name_form
+  steps:
+  - intent: deny
+  - action: utter_request_name
+  - action: first_name_form
+  - active_loop: first_name_form
+
+- rule: Interrupt_last_name_form_deny
+  condition:
+  - active_loop: last_name_form
+  steps:
+  - intent: deny
+  - action: utter_request_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  
+- rule: Interrupt_first_name_form_botchallenge
+  condition:
+  - active_loop: first_name_form
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: utter_request_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  
+- rule: Interrupt_last_name_form_botchallenge
+  condition:
+  - active_loop: last_name_form
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: utter_request_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  
+- rule: Interrupt_first_name_form_doctor
+  condition:
+  - active_loop: first_name_form
+  steps:
+  - intent: doctor_name
+  - action: action_change_doctor_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  
+- rule: Interrupt_last_name_form_doctor
+  condition:
+  - active_loop: last_name_form
+  steps:
+  - intent: doctor_name
+  - action: action_change_doctor_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  
+- rule: Activate Primary_symptom_form
+  steps:
+  - intent: consult
+  - action: utter_consult
+  - action: primary_symptom_form
+  - active_loop: primary_symptom_form
+
+- rule: Primary_symptom_Input
+  condition:
+  - active_loop: primary_symptom_form
+  steps:
+  - action: primary_symptom_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_primary_prediction
+
+
+- rule: Primary_symptom_form_deny
+  condition:
+  - active_loop: primary_symptom_form
+  steps:
+  - intent: deny
+  - action: utter_primarySymptom
+  - action: primary_symptom_form
+  - active_loop: primary_symptom_form
+
+
+# **********************************************
+
+- rule: Primary Disease Prediction
+  steps:
+  - intent: disease_main_symptom
+  - action: action_secondary_prediction
+  - action: utter_symptoms
+
+
+- rule: Symptom check Activate
+  condition:
+  - slot_was_set:
+    - temp: null
+  steps:
+  - or: 
+    - intent: symptom_deny 
+    - intent: symptom_affirm  
+  - action: action_symptom_checker
+  - action: utter_symptoms
+
+
+- rule: Symptom check Terminator 
+  condition:
+  - slot_was_set:
+    - temp: true
+  steps:
+  - action: action_predict_classify
+  - action: action_get_doctors
+  
+
+
+# *******************************************  
+- rule: Submit gender_form
+  condition:
+  - active_loop: gender_form
+  steps:
+  - action: gender_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_reply_gender
+  - action: utter_request_contact
+  - action: contact_form
+  - active_loop: contact_form
+
+# *************************************** 
+- rule: New consultation
+  steps: 
+  - action: action_predict_classify
+  - action: action_get_doctors
+
+- rule: Submit age_form
+  condition:
+  - active_loop: age_form
+  steps:
+  - action: age_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_reply_age
+  - action: utter_gender
+  - action: gender_form
+  - active_loop: gender_form
+
+- rule: Submit contact_form
+  condition:
+  - active_loop: contact_form
+  steps:
+  - action: contact_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_reply_contact
+  - action: action_user_exist
+  - action: action_book_appointment
+  - action: utter_after_appointment
+
+
+# ****************************************
+
+- rule: No slot check Activate
+  condition:
+  - slot_was_set:
+    - temp1: null
+  steps: 
+  - intent: doctor_name
+  - action: utter_reply_doctor
+  - action: action_select_date
+  
+- rule: No slot check Terminator 
+  condition:
+  - slot_was_set:
+    - temp1: true
+  steps:
+  - slot_was_set:
+    - temp1: false
+  - action: action_get_doctors
+  - intent: doctor_name
+    entities:
+    - doctor: Alex Sam
+  - slot_was_set:
+    - doctor: Alex Sam
+  - action: utter_reply_doctor
+  
+- rule: Emergency_Start
+  condition:
+  - slot_was_set:
+    - temp2: true
+  steps: 
+  - action: utter_request_contact
+  - action: contact_form
+  - active_loop: contact_form
+  
+- rule: Submit contact_form
+  condition:
+  - active_loop: contact_form
+  - slot_was_set:
+    - temp2: true
+  steps:
+  - action: contact_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_reply_contact
+  - action: action_emergency_sms
+  
+- rule: Find_Patient_Id_Start
+  condition:
+  - slot_was_set:
+    - temp3: true
+  steps: 
+  - action: utter_request_contact
+  - action: contact_form
+  - active_loop: contact_form
+  
+- rule: Submit contact_form
+  condition:
+  - active_loop: contact_form
+  - slot_was_set:
+    - temp3: true
+  steps:
+  - action: contact_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_reply_contact
+  - action: action_check_user_exist_id
+  wait_for_user_input: false
+  
+- rule: Redirect_if_id_not_found
+  condition:
+  - slot_was_set:
+    - temp4: false
+  steps: 
+  - action: utter_service
+
+- rule: if_patient_id_found
+  condition:
+  - slot_was_set:
+    - temp4: true
+  steps: 
+  - action: action_fill_user_slots
+  wait_for_user_input: false

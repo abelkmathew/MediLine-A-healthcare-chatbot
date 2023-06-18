@@ -1,0 +1,61 @@
+.patient .second-row{
+    padding-top: 1rem ;
+}
+.patient .note-submit{
+    margin-top: 15px;
+    text-align: center;
+}
+.patient-history{
+    margin-top: 5rem;
+}
+
+.calenderimg{
+    width:35px;
+    margin:1rem 1rem 1rem 0;
+}
+.date-time{
+    text-align: center;
+    
+}
+.clock{
+    display: flex;
+    justify-content: center;
+}
+.current-date{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    
+}
+.current-date .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.current-date .card-title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.current-date i{
+    padding-right: 15px;
+}
+.date-body{
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+} 
+.col-item{
+    margin: 10px 10px 10px 0;
+}
+
+
+.previous{
+    display: flex;
+    align-items:flex-start;
+    margin: 1rem;
+}
+.next{
+    display: flex;
+    align-items:flex-end;
+    margin: 1rem;
+}

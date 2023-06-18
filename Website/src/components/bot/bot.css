@@ -1,0 +1,22 @@
+.rw-header{
+    background-color: rgb(23, 128, 102) !important;
+}
+.rw-launcher{
+    background-color: rgb(23, 128, 102) !important;
+}
+.rw-conversation-container{
+    max-width: 100% !important;
+}
+.rw-conversation-container .rw-send .rw-send-icon-ready{
+    fill:rgb(23, 128, 102);
+}
+.rw-client{
+    background-color: rgb(23, 128, 102) !important;
+}
+.rw-reply{
+    background-color: rgb(23, 128, 102) !important;
+    border: 0ch !important;
+}
+.rw-conversation-container .rw-resposnse{
+    max-width: 100% !important;
+}

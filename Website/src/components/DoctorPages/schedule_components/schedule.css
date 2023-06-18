@@ -1,0 +1,30 @@
+.slot-btn{
+    margin: 1rem 2rem;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.dates{
+    /* display: flex;
+    justify-content: center; */
+    overflow: auto;
+    margin: auto;
+    text-align: center;
+
+}
+.dates .btn{
+    /* margin: 1rem; */
+    padding: 1rem 2rem;
+    border-radius:2rem;
+    
+    
+}
+.schedule .card{
+    text-align: center;
+}
+.total-slot{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,693 @@
+version: "2.0"
+
+stories:
+
+- story: name
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Thomas
+  - slot_was_set:
+    - name: Thomas
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Saji
+  - slot_was_set:
+    - name: Saji
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply
+  - action: utter_service 
+  
+- story: Consultation
+  steps:
+  - intent: consult
+  - action: utter_consult
+  - action: primary_symptom_form
+  - active_loop: primary_symptom_form
+  - slot_was_set:
+    - requested_slot: primary_symptom
+  - slot_was_set:
+    - primary_symptom: pain
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_primary_prediction
+
+- story: Disease_Prediction
+  steps:
+  - intent: disease_main_symptom
+    entities:
+      - related_symptom : "back_pain"
+  - slot_was_set:
+      - related_symptom : "back_pain"
+  - action: action_secondary_prediction
+  - action: utter_symptoms
+
+# ********************************************
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Thomas
+  - slot_was_set:
+    - name: Thomas
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Saji
+  - slot_was_set:
+    - name: Saji
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply
+  - action: utter_service
+  - intent: revisit
+  - action: utter_revisit
+  - intent: enter_id
+  - action: utter_after_revisit
+  - action: patient_form
+  - active_loop: patient_form
+  - slot_was_set:
+    - requested_slot: patient_id
+  - slot_was_set:
+    - age: '100232'
+  - slot_was_set:
+    - contact: '100232'
+  - slot_was_set:
+    - patient_id: '100232'
+  - slot_was_set:
+    - patient_id: '100232'
+  - slot_was_set:
+    - age: null
+  - slot_was_set:
+    - contact: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_check_user_database
+  - slot_was_set:
+    - user_database: false
+  - action: utter_service
+  
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Thomas
+  - slot_was_set:
+    - name: Thomas
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Saji
+  - slot_was_set:
+    - name: Saji
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply
+  - action: utter_service
+  - intent: revisit
+  - action: utter_revisit
+  - intent: enter_id
+  - action: utter_after_revisit
+  - action: patient_form
+  - active_loop: patient_form
+  - slot_was_set:
+    - requested_slot: patient_id
+  - slot_was_set:
+    - age: '100232'
+  - slot_was_set:
+    - contact: '100232'
+  - slot_was_set:
+    - patient_id: '100232'
+  - slot_was_set:
+    - patient_id: '100232'
+  - slot_was_set:
+    - age: null
+  - slot_was_set:
+    - contact: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_check_user_database
+  - slot_was_set:
+    - user_database: true
+  - action: action_fill_user_slots
+  - action: utter_all_slots
+  - action: utter_consult
+  - action: primary_symptom_form
+  - active_loop: primary_symptom_form
+  - slot_was_set:
+    - requested_slot: primary_symptom
+  - slot_was_set:
+    - primary_symptom: shivering
+  - slot_was_set:
+    - primary_symptom: shivering
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_primary_prediction
+  - intent: disease_main_symptom
+    entities:
+    - related_symptom: shivering
+  - slot_was_set:
+    - related_symptom: shivering
+  - action: action_secondary_prediction
+  - slot_was_set:
+    - symptom: continuous_sneezing
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - symptom: chills
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - symptom: watering_from_eyes
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - temp: true
+  - action: action_predict_classify
+  - action: action_get_doctors
+  - intent: doctor_name
+    entities:
+    - doctor: Allen George
+  - slot_was_set:
+    - doctor: Allen George
+  - action: utter_reply_doctor
+  - action: action_select_date
+  - intent: choose_date
+    entities:
+    - date: '2022-05-14'
+  - slot_was_set:
+    - date: '2022-05-14'
+  - action: utter_date
+  - action: action_select_timeslots
+  - intent: choosen_timeslot
+    entities:
+    - time_slot: 10:15 am
+  - slot_was_set:
+    - time_slot: 10:15 am
+  - action: utter_timeslot
+  - action: action_book_appointment
+  - action: utter_after_appointment
+  
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Thomas
+  - slot_was_set:
+    - name: Thomas
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - doctor: Saji
+  - slot_was_set:
+    - name: Saji
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply
+  - action: utter_service
+  - intent: consult
+  - action: utter_consult
+  - action: primary_symptom_form
+  - active_loop: primary_symptom_form
+  - slot_was_set:
+    - requested_slot: primary_symptom
+  - slot_was_set:
+    - primary_symptom: shivering
+  - slot_was_set:
+    - primary_symptom: shivering
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_primary_prediction
+  - intent: disease_main_symptom
+    entities:
+    - related_symptom: shivering
+  - slot_was_set:
+    - related_symptom: shivering
+  - action: action_secondary_prediction
+  - slot_was_set:
+    - symptom: continuous_sneezing
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - symptom: chills
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - symptom: watering_from_eyes
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - temp: true
+  - action: action_predict_classify
+  - action: action_get_doctors
+  - intent: doctor_name
+    entities:
+    - doctor: Allen George
+  - slot_was_set:
+    - doctor: Allen George
+  - action: utter_reply_doctor
+  - action: action_select_date
+  - intent: choose_date
+    entities:
+    - date: '2022-05-14'
+  - slot_was_set:
+    - date: '2022-05-14'
+  - action: utter_date
+  - action: action_select_timeslots
+  - intent: choosen_timeslot
+    entities:
+    - time_slot: 10:15 am
+  - slot_was_set:
+    - time_slot: 10:15 am
+  - action: utter_timeslot
+  - action: utter_after_service
+  - action: age_form
+  - active_loop: age_form
+  - slot_was_set:
+    - requested_slot: age
+  - slot_was_set:
+    - age: '12'
+  - slot_was_set:
+    - contact: '12'
+  - slot_was_set:
+    - age: 12
+  - slot_was_set:
+    - contact: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply_age
+  - action: utter_gender
+  - action: gender_form
+  - active_loop: gender_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply_gender
+  - action: utter_request_contact
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - requested_slot: contact
+  - slot_was_set:
+    - age: '9847562345'
+  - slot_was_set:
+    - contact: '9847562345'
+  - slot_was_set:
+    - contact: '9847562345'
+  - slot_was_set:
+    - age: 12
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply_contact
+  - action: action_user_exist
+  - slot_was_set:
+    - user_exist: true
+  - action: action_book_appointment
+  - action: utter_after_appointment
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - intent: doctor_name
+    entities:
+    - doctor: Alex
+  - slot_was_set:
+    - doctor: Alex
+  - action: action_change_doctor_name
+  - slot_was_set:
+    - name: Alex
+  - slot_was_set:
+    - doctor: null
+  - action: first_name_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - requested_slot: name
+  - intent: doctor_name
+    entities:
+    - doctor: Thomas
+  - slot_was_set:
+    - doctor: Thomas
+  - action: action_change_doctor_name
+  - slot_was_set:
+    - name: Alex Thomas
+  - slot_was_set:
+    - doctor: null
+  - action: last_name_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply
+  - action: utter_service
+  - intent: emergency
+  - action: action_set_true
+  - slot_was_set:
+    - temp2: true
+  - slot_was_set:
+    - age: 10
+  - action: utter_request_contact
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - requested_slot: contact
+  - slot_was_set:
+    - age: '9283746576'
+  - slot_was_set:
+    - contact: '9283746576'
+  - slot_was_set:
+    - patient_id: '9283746576'
+  - slot_was_set:
+    - contact: '9283746576'
+  - slot_was_set:
+    - age: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply_contact
+  - action: action_emergency_sms
+  
+- story: interactive_story_5
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Prasad
+  - slot_was_set:
+    - name: Prasad
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Hansika
+  - slot_was_set:
+    - name: Prasad Hansika
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply
+  - action: utter_service
+  - intent: revisit
+  - action: utter_revisit
+  - intent: find_id
+  - action: action_set_true1
+  - slot_was_set:
+    - temp3: true
+  - action: utter_request_contact
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - requested_slot: contact
+  - slot_was_set:
+    - age: '8374658678'
+  - slot_was_set:
+    - contact: '8374658678'
+  - slot_was_set:
+    - patient_id: '8374658678'
+  - slot_was_set:
+    - contact: '8374658678'
+  - slot_was_set:
+    - age: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply_contact
+  - action: action_check_user_exist_id
+  - slot_was_set:
+    - temp4: false
+  - action: utter_service
+  
+- story: interactive_story_5
+  steps:
+  - intent: greet
+  - action: utter_start
+  - action: action_reset_everything
+  - action: utter_greet
+  - action: utter_first_name
+  - action: first_name_form
+  - active_loop: first_name_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Prasad
+  - slot_was_set:
+    - name: Prasad
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_last_name
+  - action: last_name_form
+  - active_loop: last_name_form
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Hansika
+  - slot_was_set:
+    - name: Prasad Hansika
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply
+  - action: utter_service
+  - intent: revisit
+  - action: utter_revisit
+  - intent: find_id
+  - action: action_set_true1
+  - slot_was_set:
+    - temp3: true
+  - action: utter_request_contact
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - requested_slot: contact
+  - slot_was_set:
+    - age: '8374658678'
+  - slot_was_set:
+    - contact: '8374658678'
+  - slot_was_set:
+    - patient_id: '8374658678'
+  - slot_was_set:
+    - contact: '8374658678'
+  - slot_was_set:
+    - age: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_reply_contact
+  - action: action_check_user_exist_id
+  - slot_was_set:
+    - temp4: true
+    - user_database: true
+  - action: action_fill_user_slots
+  - action: utter_all_slots
+  - action: utter_consult
+  - action: primary_symptom_form
+  - active_loop: primary_symptom_form
+  - slot_was_set:
+    - requested_slot: primary_symptom
+  - slot_was_set:
+    - primary_symptom: shivering
+  - slot_was_set:
+    - primary_symptom: shivering
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_primary_prediction
+  - intent: disease_main_symptom
+    entities:
+    - related_symptom: shivering
+  - slot_was_set:
+    - related_symptom: shivering
+  - action: action_secondary_prediction
+  - slot_was_set:
+    - symptom: continuous_sneezing
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - symptom: chills
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - symptom: watering_from_eyes
+  - action: utter_symptoms
+  - intent: symptom_affirm
+    entities:
+    - sym_check: sym-yes
+  - slot_was_set:
+    - sym_check: sym-yes
+  - action: action_symptom_checker
+  - slot_was_set:
+    - temp: true
+  - action: action_predict_classify
+  - action: action_get_doctors
+  - intent: doctor_name
+    entities:
+    - doctor: Allen George
+  - slot_was_set:
+    - doctor: Allen George
+  - action: utter_reply_doctor
+  - action: action_select_date
+  - intent: choose_date
+    entities:
+    - date: '2022-05-14'
+  - slot_was_set:
+    - date: '2022-05-14'
+  - action: utter_date
+  - action: action_select_timeslots
+  - intent: choosen_timeslot
+    entities:
+    - time_slot: 10:15 am
+  - slot_was_set:
+    - time_slot: 10:15 am
+  - action: utter_timeslot
+  - action: action_book_appointment
+  - action: utter_after_appointment

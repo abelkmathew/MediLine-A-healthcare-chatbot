@@ -1,0 +1,42 @@
+.doctor-app{
+    padding-top: 8rem ;
+    padding-bottom: 5rem;
+    position: relative;
+    /* height: 100vh; */
+}
+.dashboard{
+    padding-left: 2rem;
+}
+.control-panel{
+    border-color: black;
+    border-style: solid;
+    padding: 3rem 2rem;
+    padding-bottom: 2rem;
+    position: fixed;
+    border-radius: 1.5rem;
+}
+.control-panel .doctor-name{
+    color:rgb(174, 50, 16);
+}
+.control-panel h5{
+    padding-left: 10px;
+    padding-bottom: 3rem;
+}
+
+.logout-btn{
+    text-align: center;
+    margin-top: 4rem;
+}
+.control-panel-btn .btn-item{
+    margin-bottom: 1rem;
+    font-weight:500 ;
+}
+.control-panel-btn .btn-item:hover{
+    border-color: #62d2a2 !important;
+    border-left: solid 2px;
+}
+.control-panel-btn ul{
+    list-style:None;
+    padding: 0;
+    margin: 1.5rem;
+}

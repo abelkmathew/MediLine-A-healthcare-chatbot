@@ -1,0 +1,42 @@
+Disease,Department,Dno
+Drug Reaction,Medical Dept,1
+Malaria,Communicable Diseases Dept,2
+Allergy,Allergic Dept,3
+Hypothyroidism,Medical Dept,1
+Psoriasis,Dermatology Dept,4
+GERD,Gastroenterology Dept,5
+Chronic cholestasis,Medical Dept,1
+hepatitis A,Medical Dept,1
+Osteoarthristis,Rheumatology Dept,6
+(vertigo) Paroymsal  Positional Vertigo,ENT Dept,7
+Hypoglycemia,Medical Dept,1
+Acne,Dermatology Dept,4
+Diabetes,Medical Dept,1
+Impetigo,Dermatology Dept,4
+Hypertension,Medical Dept,1
+Peptic ulcer diseae,Gastroenterology Dept,5
+Dimorphic hemmorhoids(piles),Surgical Dept,8
+Common Cold,Allergic  Dept,3
+Chicken pox,Communicable Diseases Dept,2
+Cervical spondylosis,Orthopaedic Dept,9
+Hyperthyroidism,Endocrinology Dept,10
+Urinary tract infection,Urology Dept,11
+Varicose veins,Vascular Dept,12
+AIDS,Communicable Diseases Dept,2
+Paralysis (brain hemorrhage),Neurology Dept,13
+Typhoid,Communicable Diseases Dept,2
+Hepatitis B,Medical Dept,1
+Fungal infection,Dermatology Dept,4
+Hepatitis C,Medical Dept,1
+Migraine,Neurology Dept,13
+Bronchial Asthma,Allergic Dept,3
+Alcoholic hepatitis,Medical Dept,1
+Jaundice,Medical Dept,1
+Hepatitis E,Medical Dept,1
+Dengue,Communicable Diseases Dept,2
+Hepatitis D,Medical Dept,1
+Heart attack,Cardiology Dept,14
+Pneumonia,Medical Dept,1
+Arthritis,Rheumatology Dept,6
+Gastroenteritis,Medical Dept,1
+Tuberculosis,Communicable Diseases Dept,2
