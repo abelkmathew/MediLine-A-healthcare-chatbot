@@ -20,3 +20,7 @@ immediately using his/her given contact detail.
 ## Chatbot Prediction Model 
 [Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing).
 
+## Future Scope
+• Handling of slots in emergency situations
+• Online Consultation
+
