@@ -1,6 +1,5 @@
 # MediLine-A-healthcare-chatbot
 
-
 ## Abstract
 The most common means that people use to receive healthcare are hospitals. This
 has become the norm of all individuals around the world. Hospitals are considered as
@@ -39,7 +38,13 @@ immediately using his/her given contact detail.
 - Docker
 
 ## Demo 
-![image](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/190bcc33-d74f-4ce3-80fd-b6d0276f0e68)
+### Chatbot:
+![image1](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/e3e968d5-b120-49da-b01f-87cf2bc55d9b)
+
+![image2](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/366bed2d-c599-42ff-9a83-e412d88ca6b5)
+
+### Doctor Login:
+![image3](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/190bcc33-d74f-4ce3-80fd-b6d0276f0e68)
 
 
 ## Future Scope
