@@ -1,10 +1,21 @@
 # MediLine-A-healthcare-chatbot
 
 
-## Problem Statement
-Hospitals need an improvement over the conventional system and there is a need for
-an automated online system to handle patients requiring appointments and looking for
-quick diagnosis.
+## Abstract
+The most common means that people use to receive healthcare are hospitals. This
+has become the norm of all individuals around the world. Hospitals are considered as
+the primary and the most reliable means of diagnosis for patients around the globe.
+The proposed idea of this project is to make it easier for people to access these services
+as compared to the conventional way of standing in a queue for hours. Chatbots are
+AI programs that are built to automatically engage with the received messages. These
+chatbots connect with potential patients visiting the websites, helping them discover
+specialists, booking their appointments, and getting them access to the correct treatment.
+This healthcare chatbot system will help the hospitals to provide healthcare support online
+24 x 7. This will also help the people get a quick answer to all their queries without any
+hassle. The bot will question and record details of patients and get a medical report. In
+case the patient wishes to see a specialist, this information will be provided to the doctor
+on the day of the appointment. This type of system is less known among the people hence
+it is not widely use
 
 ## Summary
 The primary goal of this project was to create a chatbot for patients which will predict
