@@ -27,6 +27,9 @@ where the patient requires immediate services. In this case an emergency sms and
 will go to the admin that the user requires emergency services and has to be contacted
 immediately using his/her given contact detail.
 
+## Chatbot Prediction Model 
+[Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing)
+
 ## Tools/ Frameworks Used:
 - RASA Framework for chatbot
 - React Website
@@ -34,8 +37,8 @@ immediately using his/her given contact detail.
 - Twilio 
 - Docker
 
-## Chatbot Prediction Model 
-[Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing)
+## Project Description:
+The chatbot is created using RASA Framework and we have intergrated that to a react website. In the website a login portal for doctor is created with which the doctors will be able to view the appointment for him for each day along with the  symptoms recorded in the chatbot. We have used firebase as the backend database for storing all the details like patient details, appointment schedules for each doctor etc. Twilio webservice is used to providing emergency sms and calling system. The whole app is containerized using docker for easy deployment and scaling.
 
 ## Demo 
 ### Chatbot:
@@ -52,11 +55,9 @@ immediately using his/her given contact detail.
 * Online Consultation
 
 ## About Us
-
-Mediline was built as part of our final year project. We are grateful to the Computer Science and Engineering Dept. in Rajagiri School of Engineering and Technology for this opportunity and their continuous support.
+MediLine Chatbot was built as part of our final year project. We are grateful to the Computer Science and Engineering Dept. of Rajagiri School of Engineering and Technology for this opportunity and their continuous support.
 
 ### Project Team
-
 * Abel Koshy Mathew
 * Akhil P Saji
 * Alan Varghese Vinu
