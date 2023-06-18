@@ -1,6 +1,6 @@
 # MediLine-A-healthcare-chatbot
 
-## Abstract
+## Introduction
 The most common means that people use to receive healthcare are hospitals. This
 has become the norm of all individuals around the world. Hospitals are considered as
 the primary and the most reliable means of diagnosis for patients around the globe.
@@ -27,15 +27,15 @@ where the patient requires immediate services. In this case an emergency sms and
 will go to the admin that the user requires emergency services and has to be contacted
 immediately using his/her given contact detail.
 
-## Chatbot Prediction Model 
-[Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing)
-
 ## Tools/ Frameworks Used:
 - RASA Framework for chatbot
 - React Website
 - Firebase Database
 - Twilio 
 - Docker
+
+## Chatbot Prediction Model 
+[Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing)
 
 ## Demo 
 ### Chatbot:
