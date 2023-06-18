@@ -22,14 +22,14 @@ immediately using his/her given contact detail.
 ## Chatbot Prediction Model 
 [Colab Notebook](https://colab.research.google.com/drive/1dIA7WBAAAHY2Omzx6ZzijYHlPUZAZH9j?usp=sharing)
 
-## Tools/ Frameworks Used:
+## Tools/ Frameworks Used
 - RASA Framework for chatbot
 - React Website
 - Firebase Database
 - Twilio 
 - Docker
 
-## Project Description:
+## Project Description
 The chatbot is created using RASA Framework and we have intergrated that to a react website. In the website a login portal for doctor is created with which the doctors will be able to view the appointment for him for each day along with the  symptoms recorded in the chatbot. We have used firebase as the backend database for storing all the details like patient details, appointment schedules for each doctor etc. Twilio webservice is used to providing emergency sms and calling system. The whole app is containerized using docker for easy deployment and scaling.
 
 ## Working
