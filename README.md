@@ -17,7 +17,7 @@ case the patient wishes to see a specialist, this information will be provided t
 on the day of the appointment. This type of system is less known among the people hence
 it is not widely use
 
-## Summary
+## Objective
 The primary goal of this project was to create a chatbot for patients which will predict
 the disease from the user input by use of an ML model. After the disease diagnosis, the
 patient has the option to select the doctor available for that department, then the user
