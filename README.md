@@ -32,6 +32,15 @@ immediately using his/her given contact detail.
 ## Project Description:
 The chatbot is created using RASA Framework and we have intergrated that to a react website. In the website a login portal for doctor is created with which the doctors will be able to view the appointment for him for each day along with the  symptoms recorded in the chatbot. We have used firebase as the backend database for storing all the details like patient details, appointment schedules for each doctor etc. Twilio webservice is used to providing emergency sms and calling system. The whole app is containerized using docker for easy deployment and scaling.
 
+## Working
+1. Create a firebase account and get the token.
+2. Add these token in react config files.
+3. Generate firebase sdk and add those chatbot config.  
+4. Create docker files for rasa, rasa-sdk and react.
+5. Create and configure twilio token in project files.
+6. Run *docker-compose up* to start the project servers.
+7. You can access the website with the chatbot at http://localhost:3000/
+
 ## Demo 
 ### Website:
 ![image1)](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/d3fe2b12-38aa-4c33-97a2-cef9fb54f251)
