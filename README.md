@@ -4,13 +4,9 @@
 Hospitals are considered as the primary and the most reliable means of diagnosis for patients around the globe.
 The proposed idea of this project is to make it easier for people to access these services
 as compared to the conventional way of standing in a queue for hours. Chatbots are
-AI programs that are built to automatically engage with the received messages. These
-chatbots connect with potential patients visiting the websites, helping them discover
-specialists, booking their appointments, and getting them access to the correct treatment.
+AI programs that are built to automatically engage with the received messages.
 This healthcare chatbot system will help the hospitals to provide healthcare support online
-24 x 7. The bot will question and record details of patients and get a medical report. In
-case the patient wishes to see a specialist, this information will be provided to the doctor
-on the day of the appointment.
+24 x 7. 
 
 ## Objective
 The primary goal of this project was to create a chatbot for patients which will predict
