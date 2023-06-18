@@ -41,13 +41,16 @@ immediately using his/her given contact detail.
 The chatbot is created using RASA Framework and we have intergrated that to a react website. In the website a login portal for doctor is created with which the doctors will be able to view the appointment for him for each day along with the  symptoms recorded in the chatbot. We have used firebase as the backend database for storing all the details like patient details, appointment schedules for each doctor etc. Twilio webservice is used to providing emergency sms and calling system. The whole app is containerized using docker for easy deployment and scaling.
 
 ## Demo 
-### Chatbot:
-![image1](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/e3e968d5-b120-49da-b01f-87cf2bc55d9b)
+### Website:
+![image1)](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/d3fe2b12-38aa-4c33-97a2-cef9fb54f251)
 
-![image2](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/366bed2d-c599-42ff-9a83-e412d88ca6b5)
+### Chatbot:
+![image2](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/e3e968d5-b120-49da-b01f-87cf2bc55d9b)
+
+![image3](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/366bed2d-c599-42ff-9a83-e412d88ca6b5)
 
 ### Doctor Login:
-![image3](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/190bcc33-d74f-4ce3-80fd-b6d0276f0e68)
+![image4](https://github.com/abelkmathew/MediLine-A-healthcare-chatbot/assets/55405281/190bcc33-d74f-4ce3-80fd-b6d0276f0e68)
 
 
 ## Future Scope
