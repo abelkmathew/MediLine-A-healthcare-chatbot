@@ -1,0 +1,140 @@
+{
+  "__collections__": {
+    "Appointment": {
+      "1OSELD5V6kHFtsqq70ub": {
+        "date": "2022-05-10",
+        "doctor_id": 10014,
+        "patient_id": 100001,
+        "patient_name": "Anoop",
+        "time": "01:15 pm",
+        "__collections__": {}
+      }
+    },
+    "Counter": {
+      "count": {
+        "Last_Patient_id": 100000,
+        "__collections__": {}
+      }
+    },
+    "Doctors": {
+      "10001": {
+        "dept_id": 1,
+        "dept_name": "Medical",
+        "day_1": {
+          "booked": [],
+          "available": [
+            100,
+            101,
+            102,
+            112,
+            115,
+            103,
+            113,
+            114
+          ],
+          "date": "2022-05-22"
+        },
+        "day_3": {
+          "available": [
+            114,
+            115,
+            116,
+            112,
+            113
+          ],
+          "date": "2022-05-24",
+          "booked": []
+        },
+        "day_5": {
+          "available": [
+            114,
+            115,
+            116,
+            117
+          ],
+          "booked": [],
+          "date": "2022-05-26"
+        },
+        "day_7": {
+          "booked": [],
+          "available": [
+            107,
+            108,
+            111,
+            112,
+            109,
+            110
+          ],
+          "date": "2022-05-28"
+        },
+        "doctor_desc": "MBBS MD (Senior Consultant)",
+        "day_2": {
+          "available": [
+            102,
+            103,
+            105,
+            101,
+            104,
+            106
+          ],
+          "date": "2022-05-23",
+          "booked": []
+        },
+        "doctor_id": 10001,
+        "day_6": {
+          "date": "2022-05-27",
+          "available": [
+            102,
+            103,
+            104,
+            105,
+            106
+          ],
+          "booked": []
+        },
+        "day_4": {
+          "date": "2022-05-25",
+          "booked": [],
+          "available": [
+            105,
+            107,
+            108,
+            104,
+            106
+          ]
+        },
+        "doctor_name": "K V Vasudevan",
+        "__collections__": {}
+      }
+    },
+    "Patients": {
+      "100006": {
+        "Patient Name": "Abel",
+        "Age": 22,
+        "Gender": "Male",
+        "History": [
+          {
+            "Doctor Id": 10001,
+            "Symptom List": [
+              "itching",
+              "pain",
+              "fever"
+            ],
+            "Prediction": "Cold",
+            "Doctor note": ""
+          }
+        ],
+        "Mobile Number": 835798739754,
+        "Patient Id": 100006,
+        "__collections__": {}
+      }
+    },
+    "Slots": {
+      "100": {
+        "slot_id": 100,
+        "time": "09:00 am",
+        "__collections__": {}
+      },
+    }
+  }
+}
