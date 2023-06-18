@@ -38,7 +38,7 @@ The chatbot is created using RASA Framework and we have intergrated that to a re
 3. Generate firebase sdk and add those chatbot config.  
 4. Create docker files for rasa, rasa-sdk and react.
 5. Create and configure twilio token in project files.
-6. Run *docker-compose up* to start the project servers.
+6. Run **docker-compose up** to start the project servers.
 7. You can access the website with the chatbot at http://localhost:3000/
 
 ## Demo 
